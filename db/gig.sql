@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS bands;
+
+
+CREATE TABLE bands (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  genre VARCHAR(255),
+  bio TEXT
+);
