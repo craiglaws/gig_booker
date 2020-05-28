@@ -30,6 +30,44 @@ class Band
   end
 
 
+  def update()
+    sql = "UPDATE bands SET (
+            name,
+            genre,
+            about)
+            = (
+              $1, $2, $3)
+              WHERE id = $4"
+    values = [@name, @genre, @about, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM bands WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM bands"
+    pg_result = SqlRunner.run(sql)
+    bands = pg_result.map {|band| Band.new(band)}
+    return bands
+  end
+
+  def self.delete_all()
+    sql = "DELETE * FROM bands"
+    SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM bands WHERE id = $1"
+    values = [id]
+    pg_result = SqlRunner.run(sql, values).first
+    band = Band.new(pg_result)
+    return band
+  end 
+
 
 
 
