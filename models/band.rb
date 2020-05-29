@@ -2,20 +2,20 @@ require_relative('../db/sql_runner')
 
 class Band
 
-  attr_reader :id, :name, :genre, :about
+  attr_reader :id, :name, :genre, :bio
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @genre = options['genre']
-    @about = options['about']
+    @bio = options['bio']
   end
 
   def save()
     sql = "INSERT INTO bands (
       name,
       genre,
-      about
+      bio
     )
     VALUES
     (
@@ -23,7 +23,7 @@ class Band
     )
     RETURNING id"
 
-    values = [@name, @genre, @about]
+    values = [@name, @genre, @bio]
     pg_result = SqlRunner.run(sql, values)
     @id = pg_result[0]['id'].to_i
 
@@ -34,11 +34,11 @@ class Band
     sql = "UPDATE bands SET (
             name,
             genre,
-            about)
+            bio)
             = (
               $1, $2, $3)
               WHERE id = $4"
-    values = [@name, @genre, @about, @id]
+    values = [@name, @genre, @bio, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -66,7 +66,7 @@ class Band
     pg_result = SqlRunner.run(sql, values).first
     band = Band.new(pg_result)
     return band
-  end 
+  end
 
 
 
