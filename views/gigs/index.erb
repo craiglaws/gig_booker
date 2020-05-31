@@ -1,6 +1,6 @@
 <h1>Gigs</h1>
 <hr/>
-<% for gig in @next_gigs %>
+
 
 <table>
   <tr>
@@ -8,6 +8,7 @@
     <th>WHERE</th>
     <th>WHEN</th>
   </tr>
+  <% for gig in @next_gigs %>
   <tr>
     <td><%= gig.band.name %></td>
     <td><%= gig.venue.name %></td>
@@ -33,3 +34,5 @@
   </select>
   <input type="submit" name="" value="Go!">
 </form>
+
+<p><a href="/gigs/show">See all gigs</a></p>

@@ -25,3 +25,10 @@ get '/gigs/venue' do
   venue = Venue.find(params['id'].to_i)
   redirect "/venues/#{venue.id}"
 end
+
+get '/gigs/show' do
+  @gigs = Gig.sort_by_date()
+  @bands = Band.all()
+  @venues = Venue.all()
+  erb( :"gigs/show")
+end

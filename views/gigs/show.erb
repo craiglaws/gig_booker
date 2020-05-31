@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>WHO</th>
+    <th>WHERE</th>
+    <th>WHEN</th>
+  </tr>
+  <% for gig in @gigs %>
+  <tr>
+    <td><a href="/bands/<%= gig.band.id %>"><%= gig.band.name %></a></td>
+    <td><a href="/venues/<%= gig.venue.id %>"><%= gig.venue.name %></a></td>
+    <td><%= gig.date %></td>
+  </tr>
+  <% end %>
+</table>
