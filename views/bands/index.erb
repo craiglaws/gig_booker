@@ -1,0 +1,14 @@
+<h1>Bands</h1>
+<hr/>
+
+
+<% for band in @bands %>
+<ul>
+  <li><a href="/bands/<%= band.id %>"> <%= band.name %> </a></li>
+
+</ul>
+<% end %>
+
+<ul>
+  <li><a href="/bands/new">ADD BAND</a></li>
+</ul>

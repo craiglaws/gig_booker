@@ -54,7 +54,7 @@ venue3 = Venue.new({
 gig1 = Gig.new({
   "band_id" => band1.id,
   "venue_id" => venue1.id,
-  "date" => "14/06/20",
+  "date" => "06/14/2020",
   "time" => "17:00"
   })
   gig1.save
@@ -62,7 +62,7 @@ gig1 = Gig.new({
 gig2 = Gig.new({
   "band_id" => band1.id,
   "venue_id" => venue2.id,
-  "date" => "19/06/20",
+  "date" => "06/19/2020",
   "time" => "15:00"
   })
   gig2.save
@@ -70,7 +70,7 @@ gig2 = Gig.new({
 gig3 = Gig.new({
   "band_id" => band1.id,
   "venue_id" => venue3.id,
-  "date" => "27/06/20",
+  "date" => "06/27/2020",
   "time" => "12:00"
   })
   gig3.save
@@ -78,7 +78,7 @@ gig3 = Gig.new({
 gig4 = Gig.new({
   "band_id" => band2.id,
   "venue_id" => venue1.id,
-  "date" => "19/06/20",
+  "date" => "06/19/2020",
   "time" => "16:00"
   })
   gig4.save
@@ -86,7 +86,7 @@ gig4 = Gig.new({
 gig5 = Gig.new({
   "band_id" => band2.id,
   "venue_id" => venue2.id,
-  "date" => "02/07/20",
+  "date" => "07/02/2020",
   "time" => "15:30"
   })
   gig5.save
@@ -94,7 +94,7 @@ gig5 = Gig.new({
 gig6 = Gig.new({
   "band_id" => band2.id,
   "venue_id" => venue2.id,
-  "date" => "05/07/20",
+  "date" => "07/05/2020",
   "time" => "13:30"
   })
   gig6.save
@@ -102,11 +102,10 @@ gig6 = Gig.new({
 gig7 = Gig.new({
   "band_id" => band3.id,
   "venue_id" => venue1.id,
-  "date" => "01/07/20",
+  "date" => "07/01/2020",
   "time" => "17:00"
   })
   gig7.save
 
   binding.pry
   nil
-  

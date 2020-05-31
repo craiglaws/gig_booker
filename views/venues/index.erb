@@ -1,0 +1,14 @@
+<h1>Venues</h1>
+<hr/>
+
+
+<% for venue in @venues %>
+<p><a href="/venues/<%= venue.id %>"> <%= venue.name %> </a> </p>
+<p>Location: <%= venue.location %></p>
+<p>Capacity: <%= venue.capacity %></p>
+
+<% end %>
+
+<ul>
+  <li><a href="/venues/new">ADD A NEW PARK</a></li>
+</ul>

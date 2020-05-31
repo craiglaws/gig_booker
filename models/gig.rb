@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Gig
 
-  attr_reader :id, :band_id, :venue_id, :date, :time
+  attr_reader :id
+  attr_accessor  :band_id, :venue_id, :date, :time
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -42,7 +43,7 @@ class Gig
   end
 
   def delete()
-    sql = "DELETE DROM gigs WHERE id = $1"
+    sql = "DELETE FROM gigs WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
@@ -69,7 +70,7 @@ class Gig
   end
 
   def self.delete_all()
-    sql = "DELETE * FROM gigs"
+    sql = "DELETE FROM gigs"
     SqlRunner.run(sql)
   end
 
@@ -79,6 +80,13 @@ class Gig
     pg_result = SqlRunner.run(sql, values).first
     gig = Gig.new(pg_result)
     return gig
+  end
+
+  def self.sort_by_date()
+    sql = "SELECT * FROM gigs ORDER BY date, time ASC"
+    pg_result = SqlRunner.run(sql)
+    gigs = pg_result.map {|gig| Gig.new(gig)}
+    return gigs
   end
 
 end

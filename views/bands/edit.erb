@@ -1,0 +1,21 @@
+<h3>Edit <%=@band.name%></h3>
+
+<form action="/bands/<%=@band.id%>" method="post">
+  <label for="name">Band Name: </label>
+  <input type="text" name="name" value="<%=@band.name%>">
+
+  <label for="genre">Genre: </label>
+  <input type="text" name="genre" value="<%=@band.genre%>">
+
+  <label for="bio">Bio: </label>
+  <input type="text" name="bio" value="<%=@band.bio%>">
+
+  <input type="submit" value="Update Band">
+
+</form>
+
+
+<form action="/bands/<%=@band.id%>/delete" method="post">
+  <input type="submit" value="Delete Band">
+
+</form>

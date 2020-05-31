@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Band
 
-  attr_reader :id, :name, :genre, :bio
+  attr_reader :id
+  attr_accessor :name, :genre, :bio
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -62,7 +63,7 @@ class Band
     pg_result = SqlRunner.run(sql, values)
     gigs = pg_result.map {|gig| Gig.new(gig)}
     return gigs
-  end 
+  end
 
   def self.all()
     sql = "SELECT * FROM bands"
@@ -72,7 +73,7 @@ class Band
   end
 
   def self.delete_all()
-    sql = "DELETE * FROM bands"
+    sql = "DELETE FROM bands"
     SqlRunner.run(sql)
   end
 

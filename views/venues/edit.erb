@@ -1,0 +1,19 @@
+<h3>Edit <%=@venue.name%></h3>
+
+<form action="/venues/<%=@venue.id%>" method="post">
+  <label for="name">Venue Name: </label>
+  <input type="text" name="name" value="<%=@venue.name%>">
+
+  <label for="location">Location: </label>
+  <input type="text" name="location" value="<%=@venue.location%>">
+
+  <label for="capacity">Capacity: </label>
+  <input type="number" name="capacity" value="<%=@venue.capacity%>">
+
+  <input type="submit" value="Update Venue Info">
+</form>
+
+
+<form action="/venues/<%=@venue.id%>/delete" method="post">
+  <input type="submit" value="Delete Venue">
+</form>

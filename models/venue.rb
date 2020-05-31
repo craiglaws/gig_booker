@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Venue
 
-  attr_reader :id, :name, :location, :capacity
+  attr_reader :id
+  attr_accessor :name, :location, :capacity
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -20,7 +21,7 @@ class Venue
               $1, $2, $3)
               RETURNING id"
 
-    values = [@name, @location, @capacity, @id]
+    values = [@name, @location, @capacity]
     pg_result = SqlRunner.run(sql, values)
     @id = pg_result[0]['id'].to_i
   end
@@ -69,7 +70,7 @@ class Venue
   end
 
   def self.delete_all()
-    sql = "DELETE * FROM venues"
+    sql = "DELETE FROM venues"
     SqlRunner.run(sql)
   end
 

@@ -1,0 +1,35 @@
+<h1>Gigs</h1>
+<hr/>
+<% for gig in @next_gigs %>
+
+<table>
+  <tr>
+    <th>WHO</th>
+    <th>WHERE</th>
+    <th>WHEN</th>
+  </tr>
+  <tr>
+    <td><%= gig.band.name %></td>
+    <td><%= gig.venue.name %></td>
+    <td><%= gig.date %></td>
+  </tr>
+  <% end %>
+</table>
+
+<form action="/gigs/band" method="get">
+  <select name="id">
+    <% for band in @bands %>
+    <option value="<%= band.id %>"><%= band.name %></option>
+    <%end%>
+  </select>
+  <input type="submit" name="" value="Go!">
+</form>
+
+<form action="/gigs/venue" method="get">
+  <select name="id">
+    <%for venue in @venues%>
+    <option value="<%= venue.id %>"><%= venue.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" name="" value="Go!">
+</form>

@@ -14,13 +14,14 @@ CREATE TABLE bands (
 CREATE TABLE venues (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  location VARCHAR(255)
+  location VARCHAR(255),
+  capacity INT
 );
 
 CREATE TABLE gigs(
   id SERIAL PRIMARY KEY,
   band_id INT REFERENCES bands(id),
   venue_id INT REFERENCES venues(id),
-  date VARCHAR(255),
-  time VARCHAR(255)
+  date DATE,
+  time TIME
 );
