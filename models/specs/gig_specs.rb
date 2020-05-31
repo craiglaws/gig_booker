@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/reporters')
 require_relative("../band")
 require_relative("../venue")
+require_relative("../gig.rb")
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 class TestGigs < MiniTest::Test
   def setup
@@ -14,6 +15,11 @@ class TestGigs < MiniTest::Test
     venue_options = {"id" => 1, "name" => "Hootenanny", "location" => "Glasgow", "capacity" => 125 }
 
     @venue1 = Venue.new(venue_options)
+
+
+    gig_options = {"id" => 1, "band_id" => @band1.id, "venue_id" => @venue1.id, "date" => "12/05/2020", "time" => "17:00"}
+
+    @gig1 = Gig.new(gig_options)
   end
 
 
@@ -44,5 +50,22 @@ class TestGigs < MiniTest::Test
     assert_equal(125, @venue1.capacity)
   end
 
+
+
+  def test_gig_band_id()
+    assert_equal(1, @gig1.band_id)
+  end
+
+  def test_gig_venue_id()
+    assert_equal(1, @gig1.venue_id)
+  end
+
+  def test_gig_date()
+    assert_equal("12/05/2020", @gig1.date)
+  end
+
+  def test_gig_time()
+    assert_equal("17:00", @gig1.time)
+  end
 
 end

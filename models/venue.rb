@@ -5,7 +5,7 @@ class Venue
   attr_reader :id, :name, :location, :capacity
 
   def initialize(options)
-    @id = options['id'] if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @location = options['location']
     @capacity = options['capacity'].to_i
@@ -42,6 +42,24 @@ class Venue
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+
+  def bands()
+    sql = "SELECT * FROM bands INNER JOIN gigs ON gigs.band_id = bands.id WHERE bands.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    bands = pg_result.map {|band| Band.new(band)}
+    return bands
+  end
+
+  def bookings()
+    sql = "SELECT * FROM gigs WHERE gigs.venue_id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    gigs = pg_result.map {|gig| Gig.new(gig)}
+    return gigs
+  end
+
 
   def self.all()
     sql = "SELECT * FROM venues"
