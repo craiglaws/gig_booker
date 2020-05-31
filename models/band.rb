@@ -48,6 +48,22 @@ class Band
     SqlRunner.run(sql, values)
   end
 
+  def venues()
+    sql = "SELECT * FROM venues INNER JOIN gigs ON gigs.venue_id = venues.id WHERE gigs.band_id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    venues = pg_result.map {|venue| Venue.new(venue)}
+    return venues
+  end
+
+  def gigs()
+    sql = "SELECT * FROM gigs WHERE gigs.band_id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    gigs = pg_result.map {|gig| Gig.new(gig)}
+    return gigs
+  end 
+
   def self.all()
     sql = "SELECT * FROM bands"
     pg_result = SqlRunner.run(sql)
