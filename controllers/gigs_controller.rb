@@ -32,3 +32,15 @@ get '/gigs/show' do
   @venues = Venue.all()
   erb( :"gigs/show")
 end
+
+ get '/gigs/new' do
+   @bands = Band.all
+   @venues = Venue.all
+   erb( :"gigs/new")
+ end
+
+post '/gigs' do
+  gig = Gig.new(params)
+  gig.save()
+  redirect ('/gigs')
+end
