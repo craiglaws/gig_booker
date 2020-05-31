@@ -47,6 +47,20 @@ class Gig
     SqlRunner.run(sql, values)
   end
 
+  def band()
+    sql = "SELECT * FROM bands WHERE bands.id = $1"
+    values = [@band_id]
+    pg_result = SqlRunner.run(sql, values).first
+    return Band.new(pg_result)
+  end
+
+  def venue()
+    sql = "SELECT * FROM venues WHERE venues.id = $1"
+    values = [@venue_id]
+    pg_result = SqlRunner.run(sql, values).first
+    return Venue.new(pg_result)
+  end
+
   def self.all()
     sql = "SELECT * FROM gigs"
     pg_result = SqlRunner.run(sql)
@@ -67,4 +81,4 @@ class Gig
     return gig
   end
 
-end 
+end
