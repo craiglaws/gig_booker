@@ -1,14 +1,24 @@
-<h1>Bands</h1>
-<hr/>
+<div class="band center">
 
 
-<% for band in @bands %>
-<ul>
-  <li><a href="/bands/<%= band.id %>"> <%= band.name %> </a></li>
 
-</ul>
-<% end %>
+  <h1 class="lrg-head">Bands</h1>
+  <br>
+  <br>
 
-<ul>
-  <li><a href="/bands/new">ADD BAND</a></li>
-</ul>
+  <div class="list-band">
+    <% for band in @bands %>
+    <hr>
+    <ul>
+      <li><a href="/bands/<%= band.id %>"> <%= band.name %> </a></li>
+      <hr>
+
+    </ul>
+    <% end %>
+
+  </div>
+
+<a class="btn" href="/bands/new">ADD BAND</a>
+
+
+</div>

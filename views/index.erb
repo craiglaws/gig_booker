@@ -1,7 +1,26 @@
-<nav>
-  <ul>
-    <li><a href="/bands">BANDS</a></li>
-    <li><a href="/venues">VENUES</a></li>
-    <li><a href="/gigs">GIGS</a></li>
-  </ul>
-</nav>
+
+
+<div class="home center">
+
+
+<h2>G in the Park is a collection of Scotland's best music acts performing at various Glasgow parks over the summer months.</h2>
+
+  <div class="home-item">
+    <p><a href="/bands">Bands</a></p>
+    <p><%= @bands.count %></p>
+  </div>
+
+
+  <div class="home-item">
+    <p><a href="/venues">Venues</a></p>
+    <p><%= @venues.count %></p>
+  </div>
+
+
+  <div class="home-item">
+    <p><a href="/gigs">Gigs</a></p>
+    <p><%= @gigs.count %></p>
+  </div>
+
+
+</div>

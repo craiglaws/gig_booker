@@ -1,15 +1,22 @@
-<h3>Add New Band</h3>
+<div class="form">
 
-<form action="/bands" method="post">
-  <label for="name">Band Name: </label>
+
+
+<h2 class="lrg-head">Add New Band</h2>
+<br>
+
+<form class="form-group" action="/bands" method="post">
+  <label  for="name">Band Name: </label>
   <input type="text" name="name">
 
   <label for="genre">Genre: </label>
   <input type="text" name="genre" value="">
 
   <label for="bio">Bio: </label>
-  <input type="text" name="bio">
+  <textarea name="bio" rows="8" cols="80"></textarea> 
 
-  <input type="submit" value="Add Band">
+  <input class="btn"type="submit" value="Add Band">
 
 </form>
+
+</div>

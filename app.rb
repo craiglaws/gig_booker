@@ -6,5 +6,8 @@ require_relative('controllers/gigs_controller')
 
 
 get '/' do
+  @bands = Band.all()
+  @venues = Venue.all()
+  @gigs = Gig.all()
   erb (:index)
 end

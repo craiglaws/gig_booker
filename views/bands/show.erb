@@ -1,7 +1,12 @@
-<h2><%= @band.name %></h2>
+<div class="band-show">
 
-<p>Genre: <%= @band.genre %></p>
+
+
+<h2 class="lrg-head"><%= @band.name %></h2>
+<br>
+
 <p>Bio: <%= @band.bio %></p>
+<br>
 
 <p>Upcoming Gigs</p>
 <table>
@@ -19,4 +24,6 @@
   <%end%>
 </table>
 
- <p><a href="/bands/<%=@band.id%>/edit">Edit or Delete Band</a></p>
+ <p><a class="btn" href="/bands/<%=@band.id%>/edit">Edit or Delete Band</a></p>
+
+</div>
