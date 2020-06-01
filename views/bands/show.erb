@@ -1,29 +1,29 @@
 <div class="band-show">
 
 
+  <div class="band-info">
+    <h2 class="lrg-head"><%= @band.name %></h2>
+    <br>
+    <p>Bio: <%= @band.bio %></p>
+  </div>
+  <br>
 
-<h2 class="lrg-head"><%= @band.name %></h2>
-<br>
+  <p class="sml-head">Upcoming Gigs</p>
+  <table>
+    <tr>
+      <th>WHERE</th>
+      <th>DATE</th>
+      <th>TIME</th>
+    </tr>
+    <% for gig in @gigs %>
+    <tr>
+      <td><%= gig.venue.name %></td>
+      <td><%= gig.date %></td>
+      <td><%= gig.time %></td>
+    </tr>
+    <%end%>
+  </table>
 
-<p>Bio: <%= @band.bio %></p>
-<br>
-
-<p>Upcoming Gigs</p>
-<table>
-  <tr>
-    <th>WHERE</th>
-    <th>DATE</th>
-    <th>TIME</th>
-  </tr>
-  <% for gig in @gigs %>
-  <tr>
-    <td><%= gig.venue.name %></td>
-    <td><%= gig.date %></td>
-    <td><%= gig.time %></td>
-  </tr>
-  <%end%>
-</table>
-
- <p><a class="btn" href="/bands/<%=@band.id%>/edit">Edit or Delete Band</a></p>
+  <p><a class="btn" href="/bands/<%=@band.id%>/edit">Edit or Delete Band</a></p>
 
 </div>

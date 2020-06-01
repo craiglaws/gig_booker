@@ -1,6 +1,8 @@
-<h3>Edit <%=@band.name%></h3>
+<div class="form">
 
-<form action="/bands/<%=@band.id%>" method="post">
+<h2 class="lrg-head">Edit <%=@band.name%></h2>
+
+<form class="form-group" action="/bands/<%=@band.id%>" method="post">
   <label for="name">Band Name: </label>
   <input type="text" name="name" value="<%=@band.name%>">
 
@@ -8,14 +10,15 @@
   <input type="text" name="genre" value="<%=@band.genre%>">
 
   <label for="bio">Bio: </label>
-  <input type="text" name="bio" value="<%=@band.bio%>">
+  <textarea name="bio" rows="8" cols="80" ><%=@band.bio%></textarea>
 
-  <input type="submit" value="Update Band">
+  <input class="btn" type="submit" value="Update Band">
 
 </form>
 
 
 <form action="/bands/<%=@band.id%>/delete" method="post">
-  <input type="submit" value="Delete Band">
+  <input class="btn" type="submit" value="Delete Band">
 
 </form>
+</div>

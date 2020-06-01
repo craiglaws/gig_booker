@@ -25,6 +25,29 @@ a {
   color: white;
 }
 
+table {
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+td, th {
+  padding: 10px 20px;
+
+}
+
+th {
+  border: 1px solid;
+
+}
+
+td {
+  border-bottom: 1px dotted;
+  border-right: 1px dotted;
+  border-left: 1px dotted;
+}
+
+
+
 .btn {
   background: blanchedalmond;
   color: #2F4F4F;
@@ -43,6 +66,12 @@ a {
   font-size: 3em;
   text-decoration: underline;
   text-align: center;
+}
+
+.sml-head {
+  text-decoration: underline;
+  margin-bottom: 5px;
+  font-size: 1.5em;
 }
 
 .navbar {
@@ -153,4 +182,10 @@ a {
 
 .band-show {
   text-align: center;
+}
+
+
+.band-info p {
+  width: 80%;
+  display: inline-flex;
 }
