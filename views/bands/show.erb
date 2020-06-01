@@ -3,4 +3,20 @@
 <p>Genre: <%= @band.genre %></p>
 <p>Bio: <%= @band.bio %></p>
 
+<p>Upcoming Gigs</p>
+<table>
+  <tr>
+    <th>WHERE</th>
+    <th>DATE</th>
+    <th>TIME</th>
+  </tr>
+  <% for gig in @gigs %>
+  <tr>
+    <td><%= gig.venue.name %></td>
+    <td><%= gig.date %></td>
+    <td><%= gig.time %></td>
+  </tr>
+  <%end%>
+</table>
+
  <p><a href="/bands/<%=@band.id%>/edit">Edit or Delete Band</a></p>

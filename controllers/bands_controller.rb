@@ -17,6 +17,7 @@ end
 
 get '/bands/:id' do
   @band = Band.find(params['id'].to_i)
+  @gigs = @band.sort_gigs()
   erb (:"bands/show")
 end
 

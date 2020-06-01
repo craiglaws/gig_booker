@@ -3,8 +3,6 @@ require('sinatra/contrib/all')
 require_relative('../models/gig')
 require_relative('../models/venue')
 require_relative('../models/band')
-require_relative('bands_controller')
-require_relative('venues_controller')
 also_reload ('../models/*')
 
 

@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/venue')
 also_reload ('../models/*')
+require('pry-byebug')
 
 
 get '/venues' do
@@ -15,6 +16,7 @@ end
 
 get '/venues/:id' do
   @venue = Venue.find(params['id'].to_i)
+  @gigs = @venue.arrange_gigs()
   erb (:"venues/show")
 end
 

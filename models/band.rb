@@ -85,6 +85,14 @@ class Band
     return band
   end
 
+  def sort_gigs()
+    sql = "SELECT * FROM gigs WHERE gigs.band_id = $1 ORDER BY date, time ASC"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    gigs = pg_result.map {|gig| Gig.new(gig)}
+    return gigs
+  end
+
 
 
 

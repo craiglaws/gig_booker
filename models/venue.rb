@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry-byebug')
 
 class Venue
 
@@ -54,6 +55,14 @@ class Venue
   end
 
   def gigs()
+    sql = "SELECT * FROM gigs WHERE gigs.venue_id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    gigs = pg_result.map {|gig| Gig.new(gig)}
+    return gigs
+  end
+
+  def arrange_gigs()
     sql = "SELECT * FROM gigs WHERE gigs.venue_id = $1"
     values = [@id]
     pg_result = SqlRunner.run(sql, values)

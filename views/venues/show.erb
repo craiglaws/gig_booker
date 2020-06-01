@@ -1,7 +1,20 @@
 <h2><%= @venue.name %></h2>
 
 <h4>Upcomimg Gigs</h4>
-
+<table>
+  <tr>
+    <th>WHO</th>
+    <th>DATE</th>
+    <th>TIME</th>
+  </tr>
+  <% for gig in @gigs %>
+  <tr>
+    <td><a href="/bands/<%= gig.band.id %>"><%= gig.band.name %></a></td>
+    <td><%= gig.date %></td>
+    <td><%= gig.time %></td>
+  </tr>
+  <%end%>
+</table>
 
 
 
