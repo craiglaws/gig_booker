@@ -1,14 +1,17 @@
-<h1>Venues</h1>
-<hr/>
+<h1 class="lrg-head">Venues</h1>
+<br>
+<br>
+<div class="list-sml">
+  <% for venue in @venues %>
+  <hr>
+  <ul>
+    <li><a href="/venues/<%= venue.id %>"> <%= venue.name %> </a></li>
+    <li>Location: <%= venue.location %></li>
+    <li>Capacity: <%= venue.capacity %></li>
+    <hr>
 
+  </ul>
+  <% end %>
+</div>
 
-<% for venue in @venues %>
-<p><a href="/venues/<%= venue.id %>"> <%= venue.name %> </a> </p>
-<p>Location: <%= venue.location %></p>
-<p>Capacity: <%= venue.capacity %></p>
-
-<% end %>
-
-<ul>
-  <li><a href="/venues/new">ADD A NEW PARK</a></li>
-</ul>
+<a class="btn" href="/venues/new">ADD A NEW PARK</a>

@@ -26,7 +26,7 @@ a {
 }
 
 table {
-  display: inline-flex;
+  display: inline-grid;
   margin-bottom: 20px;
 }
 
@@ -51,10 +51,13 @@ td {
 .btn {
   background: blanchedalmond;
   color: #2F4F4F;
-
   padding: 0.5em 2em;
   border: none;
   border-radius: 7px;
+    display: block;
+    width: fit-content;
+    margin: auto;
+
 
 }
 
@@ -104,8 +107,8 @@ td {
     position: absolute;
     /* margin-right: 2em; */
     top: 0;
-    margin-top: 5vh;
-    height: 75vh;
+    margin-top: 8vh;
+    height: 88vh;
     display: flex;
     width: 100vw;
 }
@@ -149,11 +152,26 @@ td {
 
 
 
-.list-band ul li {
+.list ul li {
   padding: 20px;
   text-align: center;
   font-size: 2em;
 }
+
+.list-sml ul {
+  margin: 10px 0px;
+}
+
+.list-sml ul li {
+  padding: 5px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.list-sml ul li a{
+  font-size: 1.6em;
+}
+
 
 
 
@@ -180,7 +198,7 @@ td {
 
 
 
-.band-show {
+.show {
   text-align: center;
 }
 
