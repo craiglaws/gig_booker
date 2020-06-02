@@ -107,5 +107,6 @@ gig7 = Gig.new({
   })
   gig7.save
 
+
   binding.pry
   nil

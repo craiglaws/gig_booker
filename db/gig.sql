@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS venues;
 
 CREATE TABLE bands (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
+  name VARCHAR(255) NOT NULL,
   genre VARCHAR(255),
   bio TEXT
 );
@@ -13,7 +13,7 @@ CREATE TABLE bands (
 
 CREATE TABLE venues (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
+  name VARCHAR(255) NOT NULL,
   location VARCHAR(255),
   capacity INT
 );

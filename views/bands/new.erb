@@ -7,13 +7,13 @@
 
 <form class="form-group" action="/bands" method="post">
   <label  for="name">Band Name: </label>
-  <input type="text" name="name">
+  <input type="text" name="name" required>
 
   <label for="genre">Genre: </label>
-  <input type="text" name="genre" value="">
+  <input type="text" name="genre" value="" required>
 
   <label for="bio">Bio: </label>
-  <textarea name="bio" rows="8" cols="80"></textarea> 
+  <textarea name="bio" rows="8" cols="80"></textarea>
 
   <input class="btn"type="submit" value="Add Band">
 

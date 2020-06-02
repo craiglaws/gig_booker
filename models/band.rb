@@ -13,6 +13,8 @@ class Band
   end
 
   def save()
+
+
     sql = "INSERT INTO bands (
       name,
       genre,
@@ -92,9 +94,5 @@ class Band
     gigs = pg_result.map {|gig| Gig.new(gig)}
     return gigs
   end
-
-
-
-
 
 end
