@@ -1,8 +1,8 @@
 <div class="center">
 
 
-<h1>Gigs</h1>
-<hr/>
+<h2 class="lrg-head">Gigs</h2>
+<br>
 
 
 <table>
@@ -20,24 +20,35 @@
   <% end %>
 </table>
 
-<form action="/gigs/band" method="get">
+<div class="select">
+
+<form class="select-group" action="/gigs/band" method="get">
+  <label for="band">Select gigs by band</label><br>
   <select name="id">
     <% for band in @bands %>
     <option value="<%= band.id %>"><%= band.name %></option>
     <%end%>
   </select>
-  <input type="submit" name="" value="Go!">
+  <input class="btn" type="submit" name="" value="Go!">
 </form>
 
-<form action="/gigs/venue" method="get">
+<form class="select-group" action="/gigs/venue" method="get">
+  <label for="venue">Select gigs by venue</label><br>
   <select name="id">
     <%for venue in @venues%>
     <option value="<%= venue.id %>"><%= venue.name %></option>
     <% end %>
   </select>
-  <input type="submit" name="" value="Go!">
+  <input class="btn" type="submit" name="" value="Go!">
 </form>
-<p><a href="/gigs/new">Create a new gig</a></p>
 
-<p><a href="/gigs/show">See all gigs</a></p>
+</div>
+<br>
+<br>
+
+<a class="btn" href="/gigs/new">Create a new gig</a>
+<br>
+
+<a class="btn" href="/gigs/show">See all gigs</a>
+
 </div>

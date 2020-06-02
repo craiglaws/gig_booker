@@ -1,8 +1,10 @@
 <div class="form">
 
-<h3>Edit <%=@venue.name%></h3>
+<h2 class="lrg-head">Edit <%=@venue.name%></h2>
+<br>
+<br>
 
-<form action="/venues/<%=@venue.id%>" method="post">
+<form class="form-group" action="/venues/<%=@venue.id%>" method="post">
   <label for="name">Venue Name: </label>
   <input type="text" name="name" value="<%=@venue.name%>">
 
@@ -12,12 +14,12 @@
   <label for="capacity">Capacity: </label>
   <input type="number" name="capacity" value="<%=@venue.capacity%>">
 
-  <input type="submit" value="Update Venue Info">
+  <input class="btn" type="submit" value="Update Venue Info">
 </form>
 
 
-<form action="/venues/<%=@venue.id%>/delete" method="post">
-  <input type="submit" value="Delete Venue">
+<form class="form-group" action="/venues/<%=@venue.id%>/delete" method="post">
+  <input class="btn" type="submit" value="Delete Venue">
 </form>
 
 </div>

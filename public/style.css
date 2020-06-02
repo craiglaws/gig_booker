@@ -207,3 +207,20 @@ td {
   width: 80%;
   display: inline-flex;
 }
+
+
+
+.select {
+  display: flex;
+  justify-content: space-around;
+}
+
+.select select {
+  width: 100%;
+}
+
+.select-group {
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+}

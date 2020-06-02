@@ -1,6 +1,7 @@
-<h2>Add a new gig</h2>
-
-<form action="/gigs" method="post">
+<h2 class="lrg-head">Add a new gig</h2>
+<br>
+<br>
+<form class="form-group" action="/gigs" method="post">
   <label for="band-name">Band</label>
   <select name="band_id">
     <% for band in @bands %>
@@ -22,6 +23,6 @@
   <label for="time">Time</label>
   <input type="time" name="time" value="">
 
-  <input type="submit" name="" value="Add Gig">
+  <input class="btn" type="submit" name="" value="Add Gig">
 
 </form>
