@@ -114,7 +114,7 @@ class Gig
       return gig_date < date_now
     end
 
-    def self.next_three()
+    def self.next_gigs()
       gigs = self.sort_by_date()
       next_gigs = []
       for gig in gigs
@@ -122,7 +122,7 @@ class Gig
           next_gigs.push(gig)
         end
       end
-      return next_gigs.first(3)
+      return next_gigs
     end
 
 

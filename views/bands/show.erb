@@ -16,7 +16,7 @@
       <th>TIME</th>
     </tr>
     <% for gig in @gigs %>
-    <tr>
+    <tr class="<%='gig-past' if gig.is_past %> ">
       <td><%= gig.venue.name %></td>
       <td><%= gig.date %></td>
       <td><%= gig.time %></td>

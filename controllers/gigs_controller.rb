@@ -8,7 +8,7 @@ also_reload ('../models/*')
 
 get '/gigs' do
 
-  @next_gigs = Gig.next_three()
+  @next_gigs = Gig.next_gigs.first(3)
   @bands = Band.all()
   @venues = Venue.all()
   erb( :"gigs/index")
