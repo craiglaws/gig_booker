@@ -20,8 +20,8 @@ CREATE TABLE venues (
 
 CREATE TABLE gigs(
   id SERIAL PRIMARY KEY,
-  band_id INT REFERENCES bands(id),
-  venue_id INT REFERENCES venues(id),
+  band_id INT REFERENCES bands(id) ON DELETE CASCADE,
+  venue_id INT REFERENCES venues(id) ON DELETE CASCADE,
   date DATE,
   time TIME
 );
