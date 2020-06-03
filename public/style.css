@@ -53,6 +53,11 @@ td {
   border-left: 1px dotted;
 }
 
+.gig-past {
+  text-decoration: line-through;
+  text-decoration-style:wavy;
+}
+
 
 
 .btn {

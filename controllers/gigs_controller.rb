@@ -7,8 +7,8 @@ also_reload ('../models/*')
 
 
 get '/gigs' do
-  gigs = Gig.sort_by_date()
-  @next_gigs = gigs.first(3)
+
+  @next_gigs = Gig.next_three()
   @bands = Band.all()
   @venues = Venue.all()
   erb( :"gigs/index")

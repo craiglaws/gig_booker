@@ -108,5 +108,24 @@ class Gig
       return pg_result
     end
 
+    def is_past()
+      gig_date = Date.parse(@date)
+      date_now = Date.today()
+      return gig_date < date_now
+    end
+
+    def self.next_three()
+      gigs = self.sort_by_date()
+      next_gigs = []
+      for gig in gigs
+        if gig.is_past == false
+          next_gigs.push(gig)
+        end
+      end
+      return next_gigs.first(3)
+    end
+
+
+
 
   end
