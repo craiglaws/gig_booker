@@ -1,7 +1,7 @@
 ## __GIG BOOKER__
 
 
-####__SETUP__
+#### __SETUP__
 
 * In terminal access the project folder
 
@@ -13,13 +13,13 @@
 
 * Launch main app file 'ruby app.rb'
 
-####__USING THE APP__
+#### __USING THE APP__
 
 * Once setup is complete launch a internet browser 'localhost:4567/'
 
 * The homapage has links to the three main pages; bands, venues and gigs
 
-######__BANDS__
+###### __BANDS__
 
 * The bands homepage will list all bands saved in the database
 
@@ -29,7 +29,7 @@
 
 * Fill out the form with relevant data, click add band and it will be added to the database
 
-######__VENEUES__
+###### __VENEUES__
 
 * The venues homepage will list all venues saved in the database
 
@@ -39,7 +39,7 @@
 
 * Fill out the form with relevant data, click add venue and it will be added to the database
 
-######__GIGS__
+###### __GIGS__
 
 * The gigs homepage shows a list of the next 3 gigs and buttons to search gigs by venue or artsit, see all gigs & create new gig
 
@@ -49,7 +49,7 @@
 
 * Create new gig will take you to a form submission, choose from band & venue (must already be saved in database) adn date & time
 
-######__TECHNOLOGIES USED__
+###### __TECHNOLOGIES USED__
 
 * Ruby
 * PostGres
