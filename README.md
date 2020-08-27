@@ -5,8 +5,11 @@ SETUP
 -- In terminal access the project folder
 
 -- Create database  'g_in_the_park'
+
 -- Drop tables in database  'psql -d g_in_the_park -f db/gigs.sql'
+
 -- Populate database with seeds file  'ruby db/seeds.rb'
+
 -- Launch main app file  'ruby app.rb'
 
 
